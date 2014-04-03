@@ -19,8 +19,7 @@ A Polymer element for online resume
 3. Import Web Components' polyfill:
 
     ```html
-    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.1.4/platform.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.1.4/polymer.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.0/platform.js"></script>
     ```
 
 4. Import Custom Element:
