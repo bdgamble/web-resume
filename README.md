@@ -37,11 +37,11 @@ A Polymer element for online resume
 
 ### Setup
 
-In order to run it locally you'll need a basic server setup, you can use python's `SimpleHTTPServer`
+In order to run it locally you'll need a basic server setup, you can use python's SimpleHTTPServer
 
-	```sh
-	python -m SimpleHTTPServer
-	``` 
+```sh
+python -m SimpleHTTPServer
+``` 
 	
 ### Options
 
