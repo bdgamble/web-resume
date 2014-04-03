@@ -2,6 +2,10 @@
 
 A Polymer element for online resume
 
+### Demo
+
+My online resume http://pvey.es
+
 ### Usage
 
 1. Install bower
