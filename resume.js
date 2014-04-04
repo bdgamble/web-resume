@@ -24,7 +24,7 @@
 		});
 	};
 
-	/** 
+	/**
 	 * This method is used to initiate ajax calls and retrieve
 	 * all JSON data from resume
 	 */
@@ -80,7 +80,7 @@
 				workTime.innerText = data[i].start;
 				workWrapper.title = data[i].duration;
 
-				workTasks.innerHTML = "<strong>Responsibilites:</strong>";
+				workTasks.innerHTML = "<strong>Responsibilities:</strong>";
 
 				var tasks = data[i].tasks;
 				for (j in tasks) {
