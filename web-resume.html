@@ -1,93 +1,35 @@
 <link rel="import" href="/bower_components/polymer/polymer.html">
 <link rel="import" href="./resume/personal.html">
 <link rel="import" href="./resume/main.html">
+
 <polymer-element name="web-resume" attributes="name alias avatar email phone site country skills educations works">
-<template id="web-resume-template">
-    <style>
-        .resume {
-            display: flex;
-            -webkit-display: flex;
-            justify-content: space-between;
-            -webkit-justify-content: space-between;
-        }
-
-        resume-personal {
-            width: 250px;
-            padding: 20px;
-        }
-
-        resume-main {
-            width: 750px;
-            padding: 20px;
-        }
-    </style>
-    <main class="resume container cf">
-        <resume-personal info="{{ info }}"></resume-personal>
-        <resume-main data="{{ data }}"></resume-main>
-    </main>
-</template>
-<script src="/bower_components/jquery/dist/jquery.min.js"></script>
-<script>
-    Polymer('web-resume', {
-        name: 'Your Name',
-        alias: 'your-alias',
-        avatar: null,
-        email: 'example@domain.com',
-        phone: '+1 234 56789',
-        site: 'http://example.com',
-        country: 'Your Country',
-        data: {
-            educations: [],
-            works: [],
-            skills: []
-        },
-        ready: function () {
-            var contact = {
-                email: this.email,
-                phone: this.phone,
-                site: this.site,
-                country: this.country,
-            };
-
-            this.info = {
-                name: this.name,
-                alias: this.alias,
-                avatar: this.avatar,
-                contact: contact
-            };
-
-            var data = this.data;
-
-            if (this.educations != null) {
-                $.ajax({
-                    url: this.educations,
-                    dataType: 'json',
-                    success: function (response) {
-                        data.educations = response.data;
-                    }
-                })
+    <template id="web-resume-template">
+        <style>
+            .resume {
+                display: flex;
+                -webkit-display: flex;
+                justify-content: space-between;
+                -webkit-justify-content: space-between;
             }
 
-            if (this.works != null) {
-                $.ajax({
-                    url: this.works,
-                    dataType: 'json',
-                    success: function (response) {
-                        data.works = response.data;
-                    }
-                })
+            resume-personal, resume-main {
+                padding: 20px;
+                display: block;
             }
 
-            if (this.skills != null) {
-                $.ajax({
-                    url: this.skills,
-                    dataType: 'json',
-                    success: function (response) {
-                        data.skills = response.data;
-                    }
-                })
+            resume-personal {
+                width: 250px;
             }
-        }
-    });
-</script>
+
+            resume-main {
+                width: 750px;
+            }
+        </style>
+        <main class="resume container cf">
+            <resume-personal info="{{ info }}"></resume-personal>
+            <resume-main data="{{ data }}"></resume-main>
+        </main>
+    </template>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./web-resume.js"></script>
 </polymer-element>
