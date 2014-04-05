@@ -79,8 +79,7 @@
 				workPlace.innerText = data[i].place;
 				workTitle.innerText = data[i].title;
 				workTime.innerText = data[i].start;
-				workWrapper.title = data[i].duration;
-
+				workTaskButton.href= "#";
 				workTasks.innerHTML = "<strong>Responsibilities:</strong>";
 
 				var tasks = data[i].tasks;
@@ -104,7 +103,7 @@
 				if (i == 0) {
 					// Show all tasks/responsibilites on latest work experiences
 					workTasks.className = 'work-tasks work-tasks-active';
-					workTaskButton.className = 'icon work-tasks-button work-tasks-button active';
+					workTaskButton.className = 'icon work-tasks-button work-tasks-button-active';
 				}
 
 				workRole.appendChild(workPlace);
