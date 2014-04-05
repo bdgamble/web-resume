@@ -1,0 +1,33 @@
+<polymer-element name="resume-educations" attributes="educations">
+    <template id="resume-educations-template">
+        <style>
+            .education {
+                font-size: 13px;
+                padding: 1em;
+            }
+
+            .education:not(:last-child) {
+                border-bottom: 1px dotted #ddd;
+            }
+
+            .education-degree, .work-title {
+                color: #999;
+            }
+        </style>
+        <div class="section-header">
+            <span class="icon section-title-icon title-education-icon"></span>
+            <h2 class="section-title">Educations</h2>
+        </div>
+        <ul class="resume-list-placeholder" id="educations-placeholder">
+            <template id="educations-template" repeat="{{ education in educations }}">
+                <li class="education">
+                    <div>{{ education.beginYear }} - {{ education.endYear }}</div>
+                    <strong>{{ education.college }}</strong>
+                    <div class="education-degree">{{ education.degree }}</div></li>
+            </template>
+        </ul>
+    </template>
+    <script>
+        Polymer('resume-educations');
+    </script>
+</polymer-element>

@@ -13,11 +13,7 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "node_modules",
-    "bower_components",
-    "app/bower_components",
-    "test",
-    "tests"
+    "samples",
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#~0.2.0",

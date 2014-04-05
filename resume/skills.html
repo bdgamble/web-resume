@@ -1,0 +1,33 @@
+<polymer-element name="resume-skills" attributes="skills">
+    <template id="resume-skills-template">
+        <style>
+            .skills {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .skills > li {
+                border-radius: 6px;
+                padding: .3em 1em;
+                margin: .3em;
+                background: #fff;
+                display: inline-block;
+                border: 1px solid #ddd;
+                font-size: 13px;
+            }
+        </style>
+        <div class="section-header">
+            <span class="icon section-title-icon title-skill-icon"></span>
+            <h2 class="section-title">Skills</h2>
+        </div>
+        <ul id="skills-placeholder" class="skills">
+            <template id="skills-template" repeat="{{ skill in skills }}">
+                <li>{{ skill }}</li>
+            </template>
+        </ul>
+    </template>
+    <script>
+        Polymer('resume-skills');
+    </script>
+</polymer-element>
