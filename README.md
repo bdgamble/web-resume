@@ -62,3 +62,9 @@ Attribute  | Options                   | Default             | Description
 `skills`      | *string*                  | `null`               | Path to your `skills.json` file (see **samples/skills.json**)
 `educations`      | *string*                  | `null`               | Path to your `educations.json` file (see **samples/educations.json**)
 `works`      | *string*                  | `null`               | Path to your `works.json` file (see **samples/works.json**)
+
+## TODO
+
+- Responsive design
+- Optional main data (do not render on default)
+- Styling guide
