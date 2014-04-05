@@ -36,21 +36,24 @@
 
             .work-tasks-button {
                 position: absolute;
+                cursor: pointer !important;
             }
 
             .work-tasks {
                 background: #f3f3f3;
                 line-height: 1.8;
                 overflow: hidden;
-                height: 0;
+                max-height: 0;
                 transition: all .25s linear;
+                border-top: 1px dotted transparent;
+                padding-right: 5em;
             }
 
             .work-tasks-active {
-                border-top: 1px dotted #ddd;
-                padding: 1em;
-                padding-left: 3em;
-                height: auto;
+                border-top-color: #ddd;
+                max-height: 150px;
+                padding-top: 1em;
+                padding-bottom: 1em;
             }
 
             .work-tasks > strong {
@@ -71,9 +74,9 @@
                             <strong class="work-place">{{ work.place }}</strong>
                             <div class="work-title">{{ work.title }}</div>
                         </div>
-                        <a class="icon work-tasks-button" data-task-index="{{ i }}" on-click="showTask()"></a>
+                        <a class="icon work-tasks-button" data-status="inactive" data-task-index="{{ i }}" on-click="{{ showTask }}"></a>
                     </div>
-                    <ul id="work-tasks-{{ i }}" class="work-tasks">
+                    <ul class="work-tasks" id="work-tasks-{{ i }}">
                         <strong>Responsibilities</strong>
                         <template id="work-tasks-template" repeat="{{ task in work.tasks }}">
                             <li class="work-task">{{ task }}</li>
@@ -84,6 +87,23 @@
         </ul>
     </template>
     <script>
-        Polymer('resume-works');
+        Polymer('resume-works', {
+            showTask: function (e) {
+                e.preventDefault();
+
+                var currentStatus = e.impl.target.dataset.status;
+                var targetIndex = e.impl.target.dataset.taskIndex;
+
+                if (currentStatus == "inactive") {
+                    e.impl.target.dataset.status = "active";
+                    document.getElementById('work-tasks-' + targetIndex).className = "work-tasks work-tasks-active";
+                }
+                else {
+                    e.impl.target.dataset.status = "inactive";
+                    document.getElementById('work-tasks-' + targetIndex).className = "work-tasks";
+                }
+
+            }
+        });
     </script>
 </polymer-element>
