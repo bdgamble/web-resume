@@ -1,8 +1,8 @@
 {
-	"data": [
-		"Polymer",
-		"Web Component",
-		"Custom Element",
-		"Bower",
-	]
+    "data": [
+        "Polymer",
+        "Web Component",
+        "Custom Element",
+        "Bower",
+    ]
 }
