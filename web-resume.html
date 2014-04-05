@@ -1,241 +1,246 @@
 <link rel="import" href="/bower_components/polymer/polymer.html">
 <polymer-element name="web-resume" attributes="name alias avatar email phone site country skills educations works">
 <template>
-	<style>
-		.resume {
-			display: flex;
-			-webkit-display: flex;
-			justify-content: space-between;
-			-webkit-justify-content: space-between;
-		}
+    <style>
+        .resume {
+            display: flex;
+            -webkit-display: flex;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
+        }
 
-		.me {
-			width: 250px;
-			padding: 20px;
-		}
+        .me {
+            width: 250px;
+            padding: 20px;
+        }
 
-		.my-avatar {
-			border-radius: 6px;
-			width: 210px;
-		}
+        .my-avatar {
+            border-radius: 6px;
+            width: 210px;
+        }
 
-		.my-name {
-			margin: 0;
-			font-size: 26px;
-		}
+        .my-name {
+            margin: 0;
+            font-size: 26px;
+        }
 
-		.my-alias {
-			font-size: 20px;
-			color: #666;
-			font-family: 'Open Sans', sans-serif;
-		}
+        .my-alias {
+            font-size: 20px;
+            color: #666;
+            font-family: 'Open Sans', sans-serif;
+        }
 
-		.my-contact {
-			border-top: 1px dotted #ddd;
-			list-style: none;
-			padding: 0;
-			line-height: 1.7;
-			padding: 1em 0;
-		}
+        .my-contact {
+            border-top: 1px dotted #ddd;
+            list-style: none;
+            padding: 0;
+            line-height: 1.7;
+            padding: 1em 0;
+        }
 
-		.contact {
-			line-height: 30px;
-			font-size: 14px;
-			color: #666;
-		}
+        .contact {
+            line-height: 30px;
+            font-size: 14px;
+            color: #666;
+        }
 
-		.contact-value, .contact-icon {
-			display: inline-block;
-			line-height: 30px;
-			vertical-align: middle;
-		}
+        .contact-value, .contact-icon {
+            display: inline-block;
+            line-height: 30px;
+            vertical-align: middle;
+        }
 
-		.main {
-			width: 750px;
-			padding: 20px;
-		}
+        .main {
+            width: 750px;
+            padding: 20px;
+        }
 
-		.section-header {
-			margin-bottom: 1em;
-		}
+        .section-header {
+            margin-bottom: 1em;
+        }
 
-		.section-title {
-			display: inline-block;
-			/* prevent duplicate margin from .section-header */
-			margin-bottom: 0;
-		}
+        .section-title {
+            display: inline-block;
+            /* prevent duplicate margin from .section-header */
+            margin-bottom: 0;
+        }
 
-		.resume-list-placeholder {
-			padding: 0;
-			margin: 0;
-			list-style: none;
-			border: 1px solid #ddd;
-			border-radius: 5px;
-			background: #fff;
-			box-shadow: 0px 2px 10px rgba(0,0,0,.05);
-		}
+        .resume-list-placeholder {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+            box-shadow: 0px 2px 10px rgba(0,0,0,.05);
+        }
 
-		.education {
-			font-size: 13px;
-			padding: 1em;
-		}
+        .education {
+            font-size: 13px;
+            padding: 1em;
+        }
 
-		.education:not(:last-child) {
-			border-bottom: 1px dotted #ddd;
-		}
+        .education:not(:last-child) {
+            border-bottom: 1px dotted #ddd;
+        }
 
-		.education-degree, .work-title {
-			color: #999;
-		}
+        .education-degree, .work-title {
+            color: #999;
+        }
 
-		.work {
-			font-size: 12px;
-		}
+        .work {
+            font-size: 12px;
+        }
 
-		.work:not(:last-child) {
-			border-bottom: 1px solid #ddd;
-		}
+        .work:not(:last-child) {
+            border-bottom: 1px solid #ddd;
+        }
 
-		.work-header {
-			display: flex;
-			-webkit-display: flex;
-			justify-content: left;
-			-webkit-justify-content: left;
-		}
+        .work-header {
+            display: flex;
+            -webkit-display: flex;
+            justify-content: left;
+            -webkit-justify-content: left;
+            position: relative;
+        }
 
-		.work-time {
-			font-size: 1.7em;
-			font-family: 'Open Sans', sans-serif;
-			padding: .75em .5em;
-			width: 65px;
-			color: #666;
-		}
+        .work-time {
+            font-size: 1.7em;
+            font-family: 'Open Sans', sans-serif;
+            padding: .75em .5em;
+            width: 65px;
+            color: #666;
+        }
 
-		.work-role {
-			padding: 1em .5em;
-		}
+        .work-role {
+            padding: 1em .5em;
+        }
 
-		.work-place {
-			display: block;
-			font-size: 14px;
-		}
+        .work-place {
+            display: block;
+            font-size: 14px;
+        }
 
-		.work-tasks {
-			background: #f3f3f3;
-			line-height: 1.8;
-			overflow: hidden;
-			height: 0;
-			transition: all .25s linear;
-		}
+        .work-tasks-button {
+            position: absolute;
+        }
 
-		.work-tasks-active {
-			border-top: 1px dotted #ddd;
-			padding: 1em;
-			padding-left: 3em;
-			height: auto;
-		}
+        .work-tasks {
+            background: #f3f3f3;
+            line-height: 1.8;
+            overflow: hidden;
+            height: 0;
+            transition: all .25s linear;
+        }
 
-		.work-tasks > strong {
-			position: relative;
-			left: -2em;
-		}
+        .work-tasks-active {
+            border-top: 1px dotted #ddd;
+            padding: 1em;
+            padding-left: 3em;
+            height: auto;
+        }
 
-		.skills > ul {
-			list-style: none;
-			padding: 0;
-		}
+        .work-tasks > strong {
+            position: relative;
+            left: -2em;
+        }
 
-		.skills > ul > li {
-			border-radius: 6px;
-			padding: .3em 1em;
-			margin: .3em;
-			background: #fff;
-			display: inline-block;
-			border: 1px solid #ddd;
-			font-size: 13px;
-		}
+        .skills > ul {
+            list-style: none;
+            padding: 0;
+        }
 
-		section {
-			border-bottom: 1px dotted #ddd;
-			margin-bottom: 2em;
-		}
-	</style>
-	<div class="container cf">
-		<div class="resume">
-			<div class="me">
-				<img class="my-avatar" src="{{avatar}}">
-				<h1 class="my-name">{{name}}</h1>
-				<span class="my-alias">{{alias}}</span>
-				<ul class="my-contact">
-					<li class="contact">
-						<span class="icon contact-icon contact-email-icon"></span>
-						<a class="contact-value" href="mailto:{{email}}">{{email}}</a>
-					</li>
-					<li class="contact">
-						<span class="icon contact-icon contact-phone-icon"></span>
-						<span class="contact-value">{{phone}}</span>
-					</li>
-					<li class="contact">
-						<span class="icon contact-icon contact-site-icon"></span>
-						<a class="contact-value" href="{{site}}">{{site}}</a>
-					</li>
-					<li class="contact">
-						<span class="icon contact-icon contact-country-icon"></span>
-						<span class="contact-value">{{country}}</span>
-					</li>
-				</ul>
-			</div>
-			<div class="main">
-				<section id="educations" class="educations" data-educations-path="{{educations}}">
-					<div class="section-header">
-						<span class="icon section-title-icon title-education-icon"></span>
-						<h2 class="section-title">Educations</h2>
-					</div>
-					<ul class="resume-list-placeholder" id="educations-placeholder"></ul>
-				</section>
+        .skills > ul > li {
+            border-radius: 6px;
+            padding: .3em 1em;
+            margin: .3em;
+            background: #fff;
+            display: inline-block;
+            border: 1px solid #ddd;
+            font-size: 13px;
+        }
 
-				<section id="works" class="works" data-works-path="{{works}}">
-					<div class="section-header">
-						<span class="icon section-title-icon title-work-icon"></span>
-						<h2 class="section-title">Work Experiences</h2>
-					</div>
-					<ul class="resume-list-placeholder" id="works-placeholder"></ul>
-				</section>
+        section {
+            border-bottom: 1px dotted #ddd;
+            margin-bottom: 2em;
+        }
+    </style>
+    <div class="container cf">
+        <div class="resume">
+            <div class="me">
+                <img class="my-avatar" src="{{avatar}}">
+                <h1 class="my-name">{{name}}</h1>
+                <span class="my-alias">{{alias}}</span>
+                <ul class="my-contact">
+                    <li class="contact">
+                        <span class="icon contact-icon contact-email-icon"></span>
+                        <a class="contact-value" href="mailto:{{email}}">{{email}}</a>
+                    </li>
+                    <li class="contact">
+                        <span class="icon contact-icon contact-phone-icon"></span>
+                        <span class="contact-value">{{phone}}</span>
+                    </li>
+                    <li class="contact">
+                        <span class="icon contact-icon contact-site-icon"></span>
+                        <a class="contact-value" href="{{site}}">{{site}}</a>
+                    </li>
+                    <li class="contact">
+                        <span class="icon contact-icon contact-country-icon"></span>
+                        <span class="contact-value">{{country}}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="main">
+                <section id="educations" class="educations" data-educations-path="{{educations}}">
+                    <div class="section-header">
+                        <span class="icon section-title-icon title-education-icon"></span>
+                        <h2 class="section-title">Educations</h2>
+                    </div>
+                    <ul class="resume-list-placeholder" id="educations-placeholder"></ul>
+                </section>
 
-				<section id="skills" class="skills" data-skills-path="{{skills}}">
-					<div class="section-header">
-						<span class="icon section-title-icon title-skill-icon"></span>
-						<h2 class="section-title">Skills</h2>
-					</div>
-					<ul id="skills-placeholder"></ul>
-				</section>
-			</div>
-		</div>
-	</div>
+                <section id="works" class="works" data-works-path="{{works}}">
+                    <div class="section-header">
+                        <span class="icon section-title-icon title-work-icon"></span>
+                        <h2 class="section-title">Work Experiences</h2>
+                    </div>
+                    <ul class="resume-list-placeholder" id="works-placeholder"></ul>
+                </section>
+
+                <section id="skills" class="skills" data-skills-path="{{skills}}">
+                    <div class="section-header">
+                        <span class="icon section-title-icon title-skill-icon"></span>
+                        <h2 class="section-title">Skills</h2>
+                    </div>
+                    <ul id="skills-placeholder"></ul>
+                </section>
+            </div>
+        </div>
+    </div>
 </template>
 <script src="/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="./resume.js"></script>
 <script>
-	Polymer('web-resume', {
-		name: 'Your Name',
-		alias: 'your-alias',
-		avatar: null,
-		email: 'example@domain.com',
-		phone: '+1 234 56789',
-		site: 'http://example.com',
-		country: 'Your Country',
-		skills: null,
-		educations: null,
-		works: null,
-		ready: function() {
-			var paths = {
-				educations: this.$.educations.attributes[2].value,
-				works: this.$.works.attributes[2].value,
-				skills: this.$.skills.attributes[2].value
-			}
+    Polymer('web-resume', {
+        name: 'Your Name',
+        alias: 'your-alias',
+        avatar: null,
+        email: 'example@domain.com',
+        phone: '+1 234 56789',
+        site: 'http://example.com',
+        country: 'Your Country',
+        skills: null,
+        educations: null,
+        works: null,
+        ready: function() {
+            var paths = {
+                educations: this.$.educations.attributes[2].value,
+                works: this.$.works.attributes[2].value,
+                skills: this.$.skills.attributes[2].value
+            }
 
-			Resume.init(paths);
-		}
-	});
+            Resume.init(paths);
+        }
+    });
 </script>
 </polymer-element>

@@ -73,6 +73,7 @@
 					workRole = document.createElement('div'),
 					workPlace = document.createElement('strong'),
 					workTitle = document.createElement('div'),
+					workTaskButton = document.createElement('a'),
 					workTasks = document.createElement('ul');
 
 				workPlace.innerText = data[i].place;
@@ -97,16 +98,20 @@
 				workRole.className = 'work-role';
 				workPlace.className = 'work-place'
 				workTitle.className = 'work-title';
+				workTaskButton.className = 'icon work-tasks-button';
 				workTasks.className = 'work-tasks';
 
 				if (i == 0) {
+					// Show all tasks/responsibilites on latest work experiences
 					workTasks.className = 'work-tasks work-tasks-active';
+					workTaskButton.className = 'icon work-tasks-button work-tasks-button active';
 				}
 
 				workRole.appendChild(workPlace);
 				workRole.appendChild(workTitle);
 				workHeader.appendChild(workTime);
 				workHeader.appendChild(workRole);
+				workHeader.appendChild(workTaskButton);
 				workWrapper.appendChild(workHeader);
 				workWrapper.appendChild(workTasks);
 
