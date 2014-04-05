@@ -1,0 +1,14 @@
+{
+	"data":
+		[{
+			"beginYear": "2004",
+			"endYear": "2006 (expected)",
+			"college": "Polymer Institute of Technology",
+			"degree": "Master of Engineering (M.Eng), Computer Engineering"
+		},{
+            "beginYear": "2000",
+            "endYear": "2004",
+            "college": "Polymer Institute of Technology",
+            "degree": "Bachelor of Engineering (B.Eng), Chemical Engineering"
+        }]
+}

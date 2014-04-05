@@ -44,8 +44,8 @@ In order to run it locally you'll need a basic server setup, you can use python'
 
 ```sh
 python -m SimpleHTTPServer
-``` 
-	
+```
+
 ### Options
 
 It has 10 attributes that will be parsed into layout
@@ -59,6 +59,6 @@ Attribute  | Options                   | Default             | Description
 `phone`      | *string*                  | `+1 234 56789`               | Your phone number
 `site`      | *string*                  | `http://example.com`               | Your site URL
 `country`      | *string*                  | `Your Country`               | Your Country
-`skills`      | *string*                  | `null`               | Path to your `skills.json` file (see samples/skills.json)
-`educations`      | *string*                  | `null`               | Path to your `educations.json` file (see samples/educations.json)
-`works`      | *string*                  | `null`               | Path to your `works.json` file (see samples/works.json)
+`skills`      | *string*                  | `null`               | Path to your `skills.json` file (see **samples/skills.json**)
+`educations`      | *string*                  | `null`               | Path to your `educations.json` file (see **samples/educations.json**)
+`works`      | *string*                  | `null`               | Path to your `works.json` file (see **samples/works.json**)
