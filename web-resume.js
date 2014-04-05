@@ -35,7 +35,7 @@
                     email: this.email,
                     phone: this.phone,
                     site: this.site,
-                    country: this.country,
+                    country: this.country
                 }
             };
 
@@ -54,4 +54,4 @@
             });
         }
     });
-}();
+})();
