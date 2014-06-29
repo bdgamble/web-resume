@@ -1,8 +1,8 @@
-## &lt;web-resume&gt;
+# &lt;web-resume&gt;
 
 A Polymer element for online resume
 
-### Usage
+## Usage
 
 1. Install bower
 
@@ -34,7 +34,7 @@ A Polymer element for online resume
     <web-resume></web-resume>
     ```
 
-### Demo
+## Demo
 
 To see how to use, see demo files (`demo.html`).
 
@@ -51,6 +51,6 @@ node demo.js
 
 Open http://localhost:8000/demo.html in your browser!
 
-### License
+## License
 
 MIT
