@@ -1,0 +1,73 @@
+<polymer-element name="resume-table" attributes="data">
+  <template>
+    <style type="text/css">
+
+      resume-table {
+        display: block;
+      }
+
+      section h2 {
+        padding: 10px 15px;
+        font-weight: 600;
+        color: #fff;
+        background: #000;
+        margin-top: 0;
+        font-size: 24px;
+        position: relative;
+      }
+
+      .table-list {
+        line-height: 24px;
+      }
+
+      .table-list td {
+        padding-bottom: 20px;
+      }
+
+      .table-list tr td:first-child {
+        vertical-align: top;
+        width: 250px;
+      }
+
+      .table-list ul {
+        margin: 0;
+        list-style: none;
+      }
+
+      .table-list li {
+        position: relative;
+      }
+
+      .table-list li:before {
+        position: absolute;
+        left: -20px;
+        content: "-";
+      }
+    </style>
+    <section>
+      <h2>{{ title }}</h2>      
+      <table class="table-list">
+        <template repeat="{{ row in data }}">
+        <tr>
+          <td>
+            <strong>{{ row.title }}</strong><br />
+            <span>{{ row.place }}</span><br />
+            <span>{{ row.location }}</span></br>
+            <span>{{ row.date }}</span>
+          </td>
+          <td>
+            <ul>
+              <template repeat="{{ list in row.details }}">
+              <li>{{ list }}</li>
+              </template>
+            </ul>
+          </td>
+        </tr>
+        </template>
+      </table>
+    </section>
+  </template>
+  <script>
+    Polymer('resume-table');
+  </script>
+</polymer-element>

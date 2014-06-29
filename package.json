@@ -1,0 +1,27 @@
+{
+  "name": "web-resume",
+  "version": "0.1.0",
+  "description": "Polymer element for online resume",
+  "main": "web-resume.js",
+  "devDependencies": {
+    "node-static": "^0.7.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pveyes/web-resume"
+  },
+  "keywords": [
+    "web-components",
+    "polymer",
+    "resume"
+  ],
+  "author": "Fatih Kalifa <fatih@pvey.es>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pveyes/web-resume/issues"
+  },
+  "homepage": "https://github.com/pveyes/web-resume"
+}

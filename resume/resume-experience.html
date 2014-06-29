@@ -1,0 +1,36 @@
+<polymer-element name="resume-experience" attributes="source, cache">
+  <template>
+    <resume-table title="Experiences" data="{{ data }}"></resume-table>
+  </template>
+  <script>
+    Polymer('resume-experience', {
+      data: [],
+      ready: function () {
+        var self = this;
+
+        var request = $.ajax({
+          type: 'GET',
+          url: this.source,
+          dataType: 'json',
+          cache: this.cache == "true"
+        });
+
+        request.done(function (data) {
+          data.forEach(function (each) {
+            self.data.push({
+              'title': each.title,
+              'place': each.company,
+              'location': each.location,
+              'date': each.start + ' - ' + each.end,
+              'details': each.tasks
+            });
+          });
+        });
+
+        request.fail(function (e) {
+          console.log('Failed to load experiences:', e);
+        });
+      }
+    });
+  </script>
+</polymer-element>

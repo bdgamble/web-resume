@@ -1,14 +1,22 @@
-{
-    "data":
-        [{
-            "beginYear": "2004",
-            "endYear": "2006 (expected)",
-            "college": "Polymer Institute of Technology",
-            "degree": "Master of Engineering (M.Eng), Computer Engineering"
-        },{
-            "beginYear": "2000",
-            "endYear": "2004",
-            "college": "Polymer Institute of Technology",
-            "degree": "Bachelor of Engineering (B.Eng), Chemical Engineering"
-        }]
-}
+[{
+    "start": "2004",
+    "end": "2006 (expected)",
+    "university": "Polymer Institute of Technology",
+    "location": "Cambridge, MA",
+    "degree": "Master of Science",
+    "details": [
+        "Computer Science Major",
+        "Professor Award 2005"
+    ]
+},{
+    "start": "2000",
+    "end": "2004",
+    "university": "Institut Teknologi Polimer",
+    "location": "Bandung, Indonesia",
+    "degree": "Bachelor of Engineering",
+    "details": [
+        "Chemical Engineering Major",
+        "Senior Thesis: Quadruple equation for Polymer stabilization in extreme temperature",
+        "Dean List"
+    ]
+}]

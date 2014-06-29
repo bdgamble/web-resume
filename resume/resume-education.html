@@ -1,0 +1,36 @@
+<polymer-element name="resume-education" attributes="source">
+  <template>
+    <resume-table title="Educations" data="{{ data }}"></resume-table>
+  </template>
+  <script>
+    Polymer('resume-education', {
+      data: [],
+      ready: function () {
+        var self = this;
+
+        var request = $.ajax({
+          type: 'GET',
+          url: this.source,
+          dataType: 'json',
+          cache: this.cache == "true"
+        });
+
+        request.done(function (data) {
+          data.forEach(function (each) {
+            self.data.push({
+              'title': each.degree,
+              'place': each.university,
+              'location': each.location,
+              'date': each.start + ' - ' + each.end,
+              'details': each.details
+            });
+          });
+        });
+
+        request.fail(function (e) {
+          console.log('Failed to load educations:', e);
+        });
+      }
+    });
+  </script>
+</polymer-element>

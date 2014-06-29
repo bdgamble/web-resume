@@ -1,35 +1,21 @@
-<link rel="import" href="/bower_components/polymer/polymer.html">
-<link rel="import" href="./resume/personal.html">
-<link rel="import" href="./resume/main.html">
+<link rel="import" href="./bower_components/polymer/polymer.html">
+<link rel="import" href="./resume/resume-personal.html">
+<link rel="import" href="./resume/resume-table.html">
+<link rel="import" href="./resume/resume-education.html">
+<link rel="import" href="./resume/resume-experience.html">
 
-<polymer-element name="web-resume" attributes="name alias avatar email phone site country skills educations works">
-    <template id="web-resume-template">
-        <style>
-            .resume {
-                display: flex;
-                -webkit-display: flex;
-                justify-content: space-between;
-                -webkit-justify-content: space-between;
-            }
-
-            resume-personal, resume-main {
-                padding: 20px;
-                display: block;
-            }
-
-            resume-personal {
-                width: 250px;
-            }
-
-            resume-main {
-                width: 750px;
-            }
-        </style>
-        <main class="resume container cf">
-            <resume-personal info="{{ info }}"></resume-personal>
-            <resume-main data="{{ data }}"></resume-main>
-        </main>
-    </template>
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="./web-resume.js"></script>
+<polymer-element name="web-resume">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
+  <style>
+    web-resume {
+      font-family: 'Source Sans Pro', sans-serif;
+      width: 90%;
+      max-width: 860px;
+      margin: auto;
+      display: block;
+    }
+  </style>
+  <script>
+    Polymer('web-resume');
+  </script>
 </polymer-element>

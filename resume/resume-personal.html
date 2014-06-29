@@ -1,0 +1,35 @@
+<polymer-element name="resume-personal" attributes="name, address, address2, phone, email">
+  <template id="resume-personal-template">
+  	<style type="text/css">
+      .personal {
+        margin-top: 40px;
+        overflow: auto;
+      }
+
+      .personal-name {
+        float: left;
+        margin-top: 0;
+        font-size: 60px;
+      }
+
+      .personal-contact {
+        float: right;
+        text-align: right;
+      }
+  	</style>
+    <section class="personal">
+      <h1 class="personal-name">{{ name }}</h1>
+      <div class="personal-contact">
+        <strong class="personal-address">{{ address }}</strong><br />
+        <template if="{{ address2 }}">
+        <strong class="personal-address">{{ address2 }}</strong><br />
+        </template>
+        <span class="personal-phone">{{ phone }}</span><br />
+        <span class="personal-email">{{ email }}</span>
+      </div>
+    </section>
+  </template>
+  <script>
+    Polymer('resume-personal');
+  </script>
+</polymer-element>

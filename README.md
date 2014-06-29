@@ -2,10 +2,6 @@
 
 A Polymer element for online resume
 
-### Demo
-
-My online resume http://pvey.es
-
 ### Usage
 
 1. Install bower
@@ -23,7 +19,7 @@ My online resume http://pvey.es
 3. Import Web Components' polyfill:
 
     ```html
-    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.2.0/platform.js"></script>
+    <script src="bower_components/platform/platform.js"></script>
     ```
 
 4. Import Custom Element:
@@ -38,33 +34,23 @@ My online resume http://pvey.es
     <web-resume></web-resume>
     ```
 
-### Setup
+### Demo
 
-In order to run it locally you'll need a basic server setup, you can use python's SimpleHTTPServer
+To see how to use, see demo files (`demo.html`).
+
+In order to run it locally you can use python's `SimpleHTTPServer` or using `node` to start `demo.js` file 
 
 ```sh
+# using python
 python -m SimpleHTTPServer
+
+# using node
+npm install
+node demo.js
 ```
 
-### Options
+Open http://localhost:8000/demo.html in your browser!
 
-It has 10 attributes that will be parsed into layout
+### License
 
-Attribute  | Options                   | Default             | Description
----        | ---                       | ---                 | ---
-`name`      | *string*                  | `Your Name`               | Your full name
-`alias`      | *string*                  | `your-alias`               | Your alias, usually your username
-`avatar`      | *string*                  | `null`               | Path to your avatar image (either absolute / relative URL)
-`email`      | *string*                  | `example@domain.com`               | Your email address
-`phone`      | *string*                  | `+1 234 56789`               | Your phone number
-`site`      | *string*                  | `http://example.com`               | Your site URL
-`country`      | *string*                  | `Your Country`               | Your Country
-`skills`      | *string*                  | `null`               | Path to your `skills.json` file (see **samples/skills.json**)
-`educations`      | *string*                  | `null`               | Path to your `educations.json` file (see **samples/educations.json**)
-`works`      | *string*                  | `null`               | Path to your `works.json` file (see **samples/works.json**)
-
-## TODO
-
-- Responsive design
-- Optional main data (do not render on default)
-- Styling guide
+MIT
