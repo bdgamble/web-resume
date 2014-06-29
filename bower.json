@@ -14,6 +14,7 @@
   "ignore": [
     "**/.*",
     "samples"
+    "node_modules"
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#~0.2.0",
