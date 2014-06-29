@@ -13,7 +13,7 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "samples"
+    "samples",
     "node_modules"
   ],
   "dependencies": {
