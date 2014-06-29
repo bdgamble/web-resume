@@ -1,0 +1,49 @@
+<polymer-element name="resume-skill" attributes="source, cache">
+  <template>
+    <style>
+      section h2 {
+        padding: 10px 15px;
+        font-weight: 600;
+        color: #fff;
+        background: #000;
+        margin-top: 0;
+        font-size: 24px;
+        position: relative;
+      }
+    </style>
+    <section>
+      <h2>Skills</h2>
+      <ul>
+      <template repeat="{{ skill in skills }}">
+        <li>{{ skill }}</li>
+      </template>
+      </ul>
+    </section>
+  </template>
+  <script>
+    Polymer('resume-skill', {
+      ready: function () {        
+        this.skills = [];
+
+        var self = this;
+
+        var request = $.ajax({
+          type: 'GET',
+          url: this.source,
+          dataType: 'json',
+          cache: this.cache == "true"
+        });
+
+        request.done(function (data) {
+          data.forEach(function (skill) {
+            self.skills.push(skill);
+          });
+        });
+
+        request.fail(function (e) {
+          console.log('Failed to load skills:', e);
+        });
+      }
+    });
+  </script>
+</polymer-element>
