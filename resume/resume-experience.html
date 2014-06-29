@@ -1,11 +1,11 @@
-<polymer-element name="resume-experience" attributes="source, cache">
-  <template>
-    <resume-table title="Experiences" data="{{ data }}"></resume-table>
-  </template>
+<polymer-element name="resume-experience" attributes="source, cache" extends="resume-table">
+  <template><shadow></shadow></template>
   <script>
     Polymer('resume-experience', {
-      data: [],
       ready: function () {
+        this.data = [];
+        this.title = 'Experiences';
+
         var self = this;
 
         var request = $.ajax({
