@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<title>Demo Resume</title>
+  <script src="bower_components/platform/platform.js"></script>
+  <link rel="import" href="web-resume.html">
+  <style type="text/css">
+    *, *:after, *:before {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <web-resume>
+    <resume-personal name="John Quark" address="17 Isotron Ave, CA" phone="+1 221 5532" email="hi@qua.rk"></resume-personal>
+    <resume-experience cache="false" source="/samples/experiences.json"></resume-experience>
+    <resume-education cache="false" source="/samples/educations.json"></resume-education>
+  </web-resume>
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+</body>
+</html>
