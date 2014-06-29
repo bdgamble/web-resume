@@ -1,7 +1,6 @@
 <polymer-element name="resume-table" attributes="title, data">
   <template id="resumeTable">
     <style type="text/css">
-
       resume-table {
         display: block;
       }
@@ -22,6 +21,7 @@
 
       .table-list td {
         padding-bottom: 20px;
+        vertical-align: top;
       }
 
       .table-list tr td:first-child {
@@ -45,7 +45,7 @@
       }
     </style>
     <section>
-      <h2>{{ title }}</h2>      
+      <h2>{{ title }}</h2>
       <table class="table-list">
         <template repeat="{{ row in data }}">
         <tr>
