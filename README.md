@@ -56,7 +56,7 @@ Open http://localhost:8000/demo.html in your browser!
 - [WIP] Summary (`<resume-summary>`)
 - Personal info (`<resume-personal>`)
 - Work experiences (`<resume-experience>`)
-- Education history (`<resume-experience>`)
+- Education history (`<resume-education>`)
 - [WIP] Skills (`<resume-skill>`)
 - [WIP] Projects (`<resume-project>`)
 
