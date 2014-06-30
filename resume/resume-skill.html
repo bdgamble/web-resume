@@ -22,9 +22,10 @@
   </template>
   <script>
     Polymer('resume-skill', {
-      ready: function () {        
+      created: function () {
         this.skills = [];
-
+      },
+      ready: function () {        
         var self = this;
 
         superagent.get(this.source).end(function (err, res) {

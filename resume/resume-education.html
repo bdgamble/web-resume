@@ -2,10 +2,11 @@
   <template><shadow></shadow></template>
   <script>
     Polymer('resume-education', {
-      ready: function () {
+      created: function () {
         this.data = [];
         this.title = 'Educations';
-
+      },
+      ready: function () {
         var self = this;
 
         superagent.get(this.source).end(function (err, res) {
