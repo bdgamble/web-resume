@@ -7,13 +7,13 @@ A Polymer element for online resume
 1. Install bower
 
    ```sh
-   npm install -g bower
+   $ npm install -g bower
    ```
 
 2. Install web-resume using bower
 
    ```sh
-   bower install web-resume
+   $ bower install web-resume
    ```
 
 3. Import Web Components' polyfill:
@@ -42,14 +42,23 @@ In order to run it locally you can use python's `SimpleHTTPServer` or using `nod
 
 ```sh
 # using python
-python -m SimpleHTTPServer
+$ python -m SimpleHTTPServer
 
 # using node
-npm install
-node demo.js
+$ npm install
+$ node demo.js
 ```
 
 Open http://localhost:8000/demo.html in your browser!
+
+## Elements
+
+- [WIP] Summary (`&lt;resume-summary&gt;`)
+- Personal info (`&lt;resume-personal&gt;`)
+- Work experiences (`&lt;resume-experience&gt;`)
+- Education history (`&lt;resume-experience&gt;`)
+- [WIP] Skills (`&lt;resume-skill&gt;`)
+- [WIP] Projects (`&lt;resume-project&gt;`)
 
 ## License
 
