@@ -8,14 +8,13 @@
 
         var self = this;
 
-        var request = $.ajax({
-          type: 'GET',
-          url: this.source,
-          dataType: 'json',
-          cache: this.cache == "true"
-        });
+        superagent.get(this.source).end(function (err, res) {
+          if (err) {
+            console.log('Failed to load educations:', err);
+            return;
+          }
 
-        request.done(function (data) {
+          var data = JSON.parse(res.text);
           data.forEach(function (each) {
             self.data.push({
               'title': each.degree,
@@ -25,10 +24,6 @@
               'details': each.details
             });
           });
-        });
-
-        request.fail(function (e) {
-          console.log('Failed to load educations:', e);
         });
       }
     });
