@@ -53,12 +53,12 @@ Open http://localhost:8000/demo.html in your browser!
 
 ## Elements
 
-- [WIP] Summary (`&lt;resume-summary&gt;`)
-- Personal info (`&lt;resume-personal&gt;`)
-- Work experiences (`&lt;resume-experience&gt;`)
-- Education history (`&lt;resume-experience&gt;`)
-- [WIP] Skills (`&lt;resume-skill&gt;`)
-- [WIP] Projects (`&lt;resume-project&gt;`)
+- [WIP] Summary (`<resume-summary>`)
+- Personal info (`<resume-personal>`)
+- Work experiences (`<resume-experience>`)
+- Education history (`<resume-experience>`)
+- [WIP] Skills (`<resume-skill>`)
+- [WIP] Projects (`<resume-project>`)
 
 ## License
 
