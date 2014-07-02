@@ -34,22 +34,13 @@ A Polymer element for online resume
     <web-resume></web-resume>
     ```
 
-## Demo
+## Usage
 
 To see how to use, see demo files (`demo.html`).
 
-In order to run it locally you can use python's `SimpleHTTPServer` or using `node` to start `demo.js` file 
+## Demo
 
-```sh
-# using python
-$ python -m SimpleHTTPServer
-
-# using node
-$ npm install
-$ node demo.js
-```
-
-Open http://localhost:8000/demo.html in your browser!
+[My online resume](http://pvey.es)
 
 ## Elements
 
